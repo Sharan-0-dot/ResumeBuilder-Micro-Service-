@@ -1,0 +1,295 @@
+[
+  {
+    "personalInformation": {
+      "fullName": "Sharan S",
+      "email": "sharan.s@example.com",
+      "phone": "9876543210",
+      "linkedin": "https://www.linkedin.com/in/sharan-s",
+      "github": "https://github.com/Sharan-0-dot",
+      "portfolio": "https://sharan-portfolio.dev",
+      "location": "Bangalore, India"
+    },
+    "education": [
+      {
+        "degree": "B.Tech in Computer Science and Engineering",
+        "institution": "ABC Institute of Technology",
+        "startYear": "2022",
+        "endYear": "2026",
+        "cgpa": "8.9"
+      }
+    ],
+    "skills": [
+      {
+        "languages": ["Java", "Python", "JavaScript"],
+        "frameworks": ["Spring Boot", "React", "Node.js"],
+        "databases": ["MySQL", "MongoDB"],
+        "tools": ["Git", "Postman", "Docker"],
+        "concepts": ["OOP", "Data Structures", "Algorithms"]
+      }
+    ],
+    "projects": [
+      {
+        "title": "AI Resume Builder",
+        "techStack": ["Spring Boot", "React", "MongoDB"],
+        "description": "An AI-based resume builder that generates resumes dynamically based on user data.",
+        "features": ["Dynamic resume templates", "PDF export", "AI-powered suggestions"],
+        "gitHubLink": "https://github.com/Sharan-0-dot/AI-Resume-Builder",
+        "liveLink": "https://resumeai.sharan.dev"
+      }
+    ],
+    "experiences": [
+      {
+        "role": "Backend Developer Intern",
+        "company": "TechVerse Solutions",
+        "location": "Remote",
+        "startDate": "2024-06-01",
+        "endDate": "2024-09-01",
+        "responsibilities": [
+          "Developed REST APIs using Spring Boot",
+          "Integrated JWT-based authentication",
+          "Worked with MongoDB for storing user data"
+        ],
+        "techUsed": "Spring Boot, MongoDB, JWT"
+      }
+    ],
+    "certifications": [
+      {
+        "title": "Java Developer Certification",
+        "issuer": "HackerRank",
+        "date": "2024-03-01",
+        "link": "https://www.hackerrank.com/certifications/java"
+      }
+    ],
+    "achievements": [
+      "Published IEEE Paper on FBG Sensors for Cancer Detection",
+      "Solved 550+ problems on LeetCode"
+    ],
+    "summary": "Aspiring full-stack developer with strong backend expertise in Spring Boot and frontend experience in React. Passionate about AI integrations and scalable systems.",
+    "additional": ["Fluent in English and Kannada", "Hackathon finalist 2024"]
+  },
+
+  {
+    "personalInformation": {
+      "fullName": "Aarav Mehta",
+      "email": "aarav.mehta@example.com",
+      "phone": "9123456789",
+      "linkedin": "https://linkedin.com/in/aaravmehta",
+      "github": "https://github.com/aarav-dev",
+      "portfolio": "https://aaravmehta.dev",
+      "location": "Pune, India"
+    },
+    "education": [
+      {
+        "degree": "B.E in Information Technology",
+        "institution": "MIT-WPU",
+        "startYear": "2021",
+        "endYear": "2025",
+        "cgpa": "9.1"
+      }
+    ],
+    "skills": [
+      {
+        "languages": ["C++", "Java", "Python"],
+        "frameworks": ["Django", "React"],
+        "databases": ["PostgreSQL", "MongoDB"],
+        "tools": ["GitHub", "Figma", "Docker"],
+        "concepts": ["REST APIs", "Microservices", "Design Patterns"]
+      }
+    ],
+    "projects": [
+      {
+        "title": "Smart Parking System",
+        "techStack": ["Python", "Django", "IoT"],
+        "description": "Built an IoT-based parking management system with live slot tracking.",
+        "features": ["Real-time slot updates", "QR-based entry", "Admin dashboard"],
+        "gitHubLink": "https://github.com/aarav-dev/smart-parking",
+        "liveLink": ""
+      }
+    ],
+    "experiences": [
+      {
+        "role": "Software Intern",
+        "company": "Cognizant",
+        "location": "Pune, India",
+        "startDate": "2024-05-01",
+        "endDate": "2024-08-30",
+        "responsibilities": [
+          "Developed microservices for internal data handling",
+          "Worked on RESTful APIs",
+          "Improved system performance by 20%"
+        ],
+        "techUsed": "Java Spring Boot, MySQL"
+      }
+    ],
+    "certifications": [
+      {
+        "title": "AWS Cloud Practitioner",
+        "issuer": "Amazon Web Services",
+        "date": "2024-01-15",
+        "link": "https://aws.amazon.com/certification"
+      }
+    ],
+    "achievements": ["Top 10 in Smart India Hackathon 2024"],
+    "summary": "Detail-oriented software engineer focused on backend development, IoT systems, and cloud integration.",
+    "additional": ["Volunteer at Code for India"]
+  },
+
+  {
+    "personalInformation": {
+      "fullName": "Neha Reddy",
+      "email": "neha.reddy@example.com",
+      "phone": "9012345678",
+      "linkedin": "https://linkedin.com/in/nehareddy",
+      "github": "https://github.com/neha-reddy",
+      "portfolio": "",
+      "location": "Hyderabad, India"
+    },
+    "education": [
+      {
+        "degree": "B.Tech in Electronics and Communication",
+        "institution": "VIT University",
+        "startYear": "2021",
+        "endYear": "2025",
+        "cgpa": "8.7"
+      }
+    ],
+    "skills": [
+      {
+        "languages": ["Python", "C", "JavaScript"],
+        "frameworks": ["Flask", "React"],
+        "databases": ["SQLite", "MongoDB"],
+        "tools": ["Git", "VSCode"],
+        "concepts": ["Machine Learning", "REST APIs"]
+      }
+    ],
+    "projects": [
+      {
+        "title": "Breast Cancer Detection",
+        "techStack": ["Python", "Flask", "TensorFlow"],
+        "description": "Machine learning-based project for early breast cancer detection.",
+        "features": ["Image classification", "Visualization", "Model accuracy report"],
+        "gitHubLink": "https://github.com/neha-reddy/cancer-detection",
+        "liveLink": ""
+      }
+    ],
+    "experiences": [],
+    "certifications": [
+      {
+        "title": "Python for Data Science",
+        "issuer": "Coursera",
+        "date": "2023-11-10",
+        "link": "https://coursera.org/certificates/python-ds"
+      }
+    ],
+    "achievements": ["Presented research paper at IEEE conference 2024"],
+    "summary": "Passionate about combining data science and web technologies to build intelligent solutions.",
+    "additional": ["Member of AI Club, VIT University"]
+  },
+
+  {
+    "personalInformation": {
+      "fullName": "Rohan Kumar",
+      "email": "rohan.kumar@example.com",
+      "phone": "9988776655",
+      "linkedin": "https://linkedin.com/in/rohankumar",
+      "github": "https://github.com/rohan-k",
+      "portfolio": "https://rohankumar.dev",
+      "location": "Delhi, India"
+    },
+    "education": [
+      {
+        "degree": "B.Tech in Computer Engineering",
+        "institution": "Delhi Technological University",
+        "startYear": "2020",
+        "endYear": "2024",
+        "cgpa": "9.3"
+      }
+    ],
+    "skills": [
+      {
+        "languages": ["C++", "Java"],
+        "frameworks": ["Spring Boot", "React"],
+        "databases": ["MySQL"],
+        "tools": ["IntelliJ", "Postman"],
+        "concepts": ["System Design", "OS", "Networking"]
+      }
+    ],
+    "projects": [
+      {
+        "title": "E-Commerce Backend",
+        "techStack": ["Spring Boot", "JWT", "MySQL"],
+        "description": "Backend system for a full-fledged e-commerce platform.",
+        "features": ["Authentication", "Product management", "Payment API integration"],
+        "gitHubLink": "https://github.com/rohan-k/ecommerce-backend",
+        "liveLink": ""
+      }
+    ],
+    "experiences": [
+      {
+        "role": "Software Engineer Intern",
+        "company": "Amazon",
+        "location": "Hyderabad, India",
+        "startDate": "2024-05-01",
+        "endDate": "2024-07-30",
+        "responsibilities": ["Developed internal API services", "Wrote integration tests"],
+        "techUsed": "Java, AWS Lambda"
+      }
+    ],
+    "certifications": [],
+    "achievements": ["Secured 3rd rank in CodeChef DTU Coding Challenge"],
+    "summary": "Strong foundation in backend development with focus on scalable systems and microservices.",
+    "additional": []
+  },
+
+  {
+    "personalInformation": {
+      "fullName": "Priya Sharma",
+      "email": "priya.sharma@example.com",
+      "phone": "9090909090",
+      "linkedin": "https://linkedin.com/in/priyasharma",
+      "github": "https://github.com/priyasharma",
+      "portfolio": "",
+      "location": "Mumbai, India"
+    },
+    "education": [
+      {
+        "degree": "MCA",
+        "institution": "University of Mumbai",
+        "startYear": "2022",
+        "endYear": "2024",
+        "cgpa": "9.0"
+      }
+    ],
+    "skills": [
+      {
+        "languages": ["JavaScript", "TypeScript"],
+        "frameworks": ["React", "Next.js", "Node.js"],
+        "databases": ["MongoDB"],
+        "tools": ["VSCode", "Figma", "GitHub Actions"],
+        "concepts": ["UI/UX", "Responsive Design", "Frontend Optimization"]
+      }
+    ],
+    "projects": [
+      {
+        "title": "Portfolio Builder",
+        "techStack": ["Next.js", "Tailwind CSS"],
+        "description": "Developed a customizable portfolio builder app for developers.",
+        "features": ["Dynamic sections", "Custom themes", "Deployment support"],
+        "gitHubLink": "https://github.com/priyasharma/portfolio-builder",
+        "liveLink": "https://portfolio-builder.vercel.app"
+      }
+    ],
+    "experiences": [],
+    "certifications": [
+      {
+        "title": "Frontend Developer Certification",
+        "issuer": "freeCodeCamp",
+        "date": "2023-09-01",
+        "link": "https://freecodecamp.org/certifications/frontend"
+      }
+    ],
+    "achievements": ["Top 5 UI Designer in DevJam 2023"],
+    "summary": "Creative frontend developer passionate about crafting interactive and user-friendly web experiences.",
+    "additional": ["Freelance web designer", "Participated in GirlScript Hackathon"]
+  }
+]

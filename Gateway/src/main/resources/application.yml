@@ -1,0 +1,40 @@
+spring:
+  main:
+    web-application-type: reactive
+  application:
+    name: Gateway
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/ResumeBuilder
+      database: ResumeBuilder
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: Resume-Service
+              uri: lb://RESUME-SERVICE
+              predicates:
+                - Path=/api/resume/**
+
+            - id: AI-Service
+              uri: lb://AI-SERVICE
+              predicates:
+                - Path=/api/ai/**
+
+            - id: Document-Service
+              uri: lb://DOCUMENT-SERVICE
+              predicates:
+                - Path=/api/document/download/**
+
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+
+server:
+  port: 8080
