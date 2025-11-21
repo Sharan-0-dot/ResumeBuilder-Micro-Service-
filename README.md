@@ -1,302 +1,88 @@
-<div align="center">
+# Resume Builder
 
-# 🤖 AI-Powered Resume Builder
+A Spring Boot app that uses Gemini AI to generate Word document resumes. Built this to learn microservices architecture and play around with AI APIs.
 
-[![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)](https://spring.io/projects/spring-boot)
-[![Microservices](https://img.shields.io/badge/Microservices-FF6B6B?style=for-the-badge&logo=spring&logoColor=white)](https://spring.io/microservices)
-[![Gemini API](https://img.shields.io/badge/Gemini_AI-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
+## What it does
 
-**An intelligent microservices-based application that generates ATS-friendly resumes using AI**
+Takes resume info (work experience, education, skills) and uses Google's Gemini API to format it nicely, then exports as a .docx file. The AI part helps make the content sound more professional and optimized for ATS systems.
 
-[Features](#-features) • [Architecture](#-architecture) • [Tech Stack](#-tech-stack) • [Getting Started](#-getting-started) • [API Documentation](#-api-documentation)
+## Tech used
 
-</div>
+- Spring Boot for the backend
+- Gemini API for AI content generation
+- Apache POI for creating Word documents
+- Eureka for service discovery (experimenting with microservices)
+- MySQL for storing resume data
 
----
-
-## 📋 Overview
-
-AI-Powered Resume Builder is a sophisticated microservices application that leverages Google's Gemini AI to create professional, ATS-optimized resumes. The application intelligently formats user input into industry-standard resume templates and exports them as editable Microsoft Word documents.
-
-### ✨ Key Highlights
-
-- 🧠 **AI-Powered Formatting** - Gemini API intelligently structures and optimizes resume content
-- 📄 **ATS-Friendly Output** - Generates resumes optimized for Applicant Tracking Systems
-- 📝 **Editable DOCX Format** - Uses Apache POI to create fully editable Word documents
-- 🏗️ **Microservices Architecture** - Scalable and maintainable service-oriented design
-- 🔄 **Service Discovery** - Eureka Server for dynamic service registration
-- 🚪 **API Gateway** - Centralized routing and load balancing
-
----
-
-## 🚀 Features
-
-### Core Functionality
-- ✅ User input collection (experience, education, skills)
-- ✅ AI-powered content enhancement and formatting
-- ✅ ATS score optimization
-- ✅ Professional template generation
-- ✅ Export to editable .docx format
-- ✅ Real-time resume preview
-
-### Technical Features
-- ✅ RESTful API architecture
-- ✅ Service registry and discovery
-- ✅ Centralized API gateway
-- ✅ Load balancing
-- ✅ Fault tolerance
-- ✅ Distributed tracing
-
----
-
-## 🏗️ Architecture
+## Project structure
 
 ```
-┌─────────────────────────────────────────────────────┐
-│                   API Gateway                        │
-│            (Spring Cloud Gateway)                    │
-└──────────────┬──────────────────────────────────────┘
-               │
-               ├──────────────┬──────────────┬─────────────
-               │              │              │
-               ▼              ▼              ▼
-        ┌────────────┐ ┌────────────┐ ┌────────────┐
-        │  Resume    │ │   AI       │ │  Document  │
-        │  Service   │ │  Service   │ │  Service   │
-        └─────┬──────┘ └─────┬──────┘ └─────┬──────┘
-              │              │              │
-              └──────────────┴──────────────┘
-                             │
-                    ┌────────▼─────────┐
-                    │ Eureka Discovery │
-                    │     Server       │
-                    └──────────────────┘
+├── api-gateway/          # Routes requests to services
+├── eureka-server/        # Service registry
+├── resume-service/       # Handles resume CRUD
+├── ai-service/           # Calls Gemini API
+└── document-service/     # Generates DOCX files
 ```
 
-### Microservices Components
+## Running it
 
-#### 1. **Eureka Service Registry** 
-- Service discovery and registration
-- Health monitoring
-- Load balancing support
+You'll need Java 17+ and Maven installed.
 
-#### 2. **API Gateway**
-- Request routing
-- Load balancing
-- Rate limiting
-- Authentication/Authorization
-
-#### 3. **Resume Service**
-- User data management
-- Resume template selection
-- Business logic orchestration
-
-#### 4. **AI Service**
-- Gemini API integration
-- Content optimization
-- ATS keyword enhancement
-- Format standardization
-
-#### 5. **Document Service**
-- Apache POI integration
-- DOCX generation
-- Template rendering
-- File download management
-
----
-
-## 🛠️ Tech Stack
-
-### Backend Framework
-- **Spring Boot** - Core framework
-- **Spring Cloud Netflix Eureka** - Service discovery
-- **Spring Cloud Gateway** - API gateway
-- **Spring Web** - RESTful APIs
-
-### AI & Integration
-- **Google Gemini API** - AI-powered content formatting
-- **Apache POI** - Microsoft Word document generation
-- **RestTemplate/WebClient** - Inter-service communication
-
-### Database
-- **MySQL/PostgreSQL** - Relational database
-- **Spring Data JPA** - Data persistence
-
-### Development Tools
-- **Maven** - Dependency management
-- **Lombok** - Boilerplate reduction
-- **Postman** - API testing
-
----
-
-## 📦 Getting Started
-
-### Prerequisites
+1. Clone the repo
+2. Add your Gemini API key in `application.properties`
+3. Set up MySQL database (schema in `/sql` folder)
+4. Start services in this order:
+   - Eureka server (port 8761)
+   - API Gateway (port 8080)
+   - Then the other services
 
 ```bash
-- Java 17 or higher
-- Maven 3.6+
-- MySQL 8.0+ (or PostgreSQL)
-- Google Cloud API Key (for Gemini API)
+cd eureka-server && mvn spring-boot:run
+cd api-gateway && mvn spring-boot:run
+# etc...
 ```
 
-### Installation
+## API endpoints
 
-1. **Clone the repository**
-```bash
-git clone https://github.com/Sharan-0-dot/ai-resume-builder-microservices.git
-cd ai-resume-builder-microservices
+Create a resume:
 ```
-
-2. **Configure Gemini API Key**
-```properties
-# application.properties or application.yml
-gemini.api.key=YOUR_GEMINI_API_KEY
-```
-
-3. **Configure Database**
-```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/resume_db
-spring.datasource.username=your_username
-spring.datasource.password=your_password
-```
-
-4. **Start Services in Order**
-
-```bash
-# 1. Start Eureka Server
-cd eureka-server
-mvn spring-boot:run
-
-# 2. Start API Gateway
-cd api-gateway
-mvn spring-boot:run
-
-# 3. Start Microservices
-cd resume-service
-mvn spring-boot:run
-
-cd ai-service
-mvn spring-boot:run
-
-cd document-service
-mvn spring-boot:run
-```
-
-### Service Ports
-
-| Service | Port |
-|---------|------|
-| Eureka Server | 8761 |
-| API Gateway | 8080 |
-| Resume Service | 8081 |
-| AI Service | 8082 |
-| Document Service | 8083 |
-
----
-
-## 📡 API Documentation
-
-### Base URL
-```
-http://localhost:8080/api
-```
-
-### Endpoints
-
-#### Create Resume
-```http
 POST /api/resume/create
-Content-Type: application/json
-
-{
-  "personalInfo": {
-    "name": "John Doe",
-    "email": "john@example.com",
-    "phone": "+1234567890"
-  },
-  "experience": [...],
-  "education": [...],
-  "skills": [...]
-}
 ```
 
-#### Generate DOCX
-```http
+Download as Word doc:
+```
 GET /api/resume/{id}/download
-Response: application/vnd.openxmlformats-officedocument.wordprocessingml.document
 ```
 
-#### Optimize with AI
-```http
-POST /api/ai/optimize
-Content-Type: application/json
+## Things that work
 
-{
-  "content": "...",
-  "jobDescription": "..."
-}
-```
+- Basic resume creation and storage
+- Gemini integration for content improvement
+- Word document generation with Apache POI
+- Service discovery between microservices
+
+## Known issues
+
+- No frontend yet, just APIs
+- Error handling could be better
+- Need to add proper validation
+- Document formatting is pretty basic right now
+
+## Why microservices?
+
+Honestly wanted to learn the pattern. For this project size, a monolith would've been simpler, but breaking it into services helped me understand:
+- How services communicate
+- Service discovery with Eureka
+- API gateway patterns
+- Independent deployment
+
+## Future improvements
+
+- Better document templates
+- Proper error handling and logging
+- Docker compose setup for easy deployment
+
 
 ---
 
-## 🎯 How It Works
-
-1. **User Input** → User provides resume details through REST API
-2. **AI Processing** → Gemini API analyzes and optimizes content for ATS
-3. **Template Selection** → System applies professional formatting rules
-4. **Document Generation** → Apache POI creates editable DOCX file
-5. **Download** → User receives ATS-friendly, ready-to-use resume
-
----
-
-## 🔑 Key Features Breakdown
-
-### AI-Powered Optimization
-- **Content Enhancement**: Gemini API improves clarity and impact
-- **Keyword Optimization**: Matches job descriptions with relevant keywords
-- **ATS Compatibility**: Ensures 90%+ ATS parsing success rate
-- **Professional Language**: Transforms casual text to professional format
-
-### Document Generation
-- **Apache POI Integration**: Creates native Microsoft Word format
-- **Editable Output**: Users can modify generated resumes
-- **Multiple Templates**: Professional, modern, and classic designs
-- **Rich Formatting**: Headers, bullet points, tables, and styling
-
-### Microservices Benefits
-- **Scalability**: Individual services can scale independently
-- **Maintainability**: Easier to update and debug specific features
-- **Resilience**: Failure in one service doesn't crash the entire system
-- **Technology Flexibility**: Each service can use different tech if needed
-
----
-
-
-## 👨‍💻 Author
-
-**Sharan SC**
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sharan-sc-4b475b2b7)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Sharan-0-dot)
-[![LeetCode](https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=LeetCode&logoColor=black)](https://leetcode.com/u/sharansc482/)
-
----
-
-## 🙏 Acknowledgments
-
-- [Google Gemini API](https://ai.google.dev/) for AI capabilities
-- [Apache POI](https://poi.apache.org/) for document generation
-- [Spring Cloud](https://spring.io/projects/spring-cloud) for microservices infrastructure
-- The open-source community for inspiration
-
----
-
-<div align="center">
-
-### ⭐ Star this repository if you find it helpful!
-
-Made with ❤️ by Sharan SC
-
-</div>
+Built while learning Spring Cloud. Feedback welcome.
